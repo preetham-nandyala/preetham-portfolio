@@ -287,14 +287,17 @@
 /*                                Hero Section                                */
 /* -------------------------------------------------------------------------- */
 .heroSection {
-  padding: 3rem 1.5rem;
-  /* Comfortable side padding */
+  padding: 3rem 1rem;
+  /* Reduced, balanced padding for all mobile */
   min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
-  /* Handled by body */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* Prevent horizontal spill */
   text-align: center;
   position: relative;
 }
@@ -314,12 +317,14 @@
 }
 
 .heroContainer {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
   max-width: 1200px;
   width: 100%;
   align-items: center;
+  margin: 0 auto;
+  /* Explicit centering */
   position: relative;
   z-index: 1;
 }
@@ -333,14 +338,16 @@
 /* ... (existing styles) */
 
 .heroTitle {
-  font-size: 2.25rem;
-  /* Mobile first size */
+  font-size: 2rem;
+  /* Reduced from 2.25rem to fit "Experiences" */
   font-weight: 800;
   line-height: 1.3;
-  /* Improved readability */
   margin-bottom: 1.5rem;
   color: #F8FAFC;
   letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 /* ... */
@@ -378,7 +385,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
+  display: inline;
+  /* Changed from inline-block to allow wrapping */
   padding: 0 0.2rem;
   filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.6));
   /* Stronger Glow */
@@ -394,10 +402,10 @@
 
 .heroBtnPrimary {
   display: inline-block;
-  padding: 0.8rem 2.5rem;
+  padding: 0.8rem 2rem;
   width: auto;
-  min-width: 160px;
-  /* Removed flex: 1 to prevent full stretch */
+  min-width: 140px;
+  /* Reduced for small mobile screens (140+140+gap < 320) */
   background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
   /* Indigo -> Pink */
   color: white;
@@ -426,10 +434,10 @@
 
 .heroBtnSecondary {
   display: inline-block;
-  padding: 0.8rem 2.5rem;
+  padding: 0.8rem 2rem;
   width: auto;
-  min-width: 160px;
-  /* Removed flex: 1 */
+  min-width: 140px;
+  /* Reduced for small mobile screens */
   background: rgba(30, 41, 59, 0.6);
   color: #f1f5f9;
   font-weight: 600;
@@ -741,8 +749,7 @@
   display: flex;
   overflow-x: auto;
   gap: 1.5rem;
-  padding: 0 1.5rem 2rem 1.5rem;
-  /* Add side padding for scroll start/end */
+  padding-bottom: 2rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -1167,11 +1174,40 @@
 }
 
 /* -------------------------------------------------------------------------- */
+/*                            Small Mobile Styles                             */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .heroBtnPrimary,
+  .heroBtnSecondary {
+    padding: 0.8rem 1.5rem;
+    min-width: 130px;
+    font-size: 0.9rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
 /*                            Desktop / Tablet Styles                         */
 /* -------------------------------------------------------------------------- */
-
 /* Tablet (md) */
 @media (min-width: 768px) {
+
+  /* ... */
+  .heroContainer {
+    display: grid;
+    /* Switch back to grid on tablet/desktop */
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
   .nav {
     padding: 0 2rem;
   }
