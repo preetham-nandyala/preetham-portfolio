@@ -269,7 +269,8 @@
 .navLink {
   text-decoration: none;
   color: #94A3B8;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 1.5rem;
+  /* Larger touch target */
   font-weight: 500;
   display: block;
   width: 100%;
@@ -286,8 +287,8 @@
 /*                                Hero Section                                */
 /* -------------------------------------------------------------------------- */
 .heroSection {
-  padding: 3rem 0.5rem;
-  /* Minimized side padding */
+  padding: 3rem 1.5rem;
+  /* Comfortable side padding */
   min-height: auto;
   display: flex;
   align-items: center;
@@ -335,7 +336,8 @@
   font-size: 2.25rem;
   /* Mobile first size */
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.3;
+  /* Improved readability */
   margin-bottom: 1.5rem;
   color: #F8FAFC;
   letter-spacing: -0.02em;
@@ -417,6 +419,11 @@
   filter: brightness(1.1);
 }
 
+.heroBtnPrimary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+}
+
 .heroBtnSecondary {
   display: inline-block;
   padding: 0.8rem 2.5rem;
@@ -443,9 +450,14 @@
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
+.heroBtnSecondary:active {
+  transform: translateY(0) scale(0.98);
+}
+
 .heroSubtitle {
   font-size: 1.1rem;
-  color: #94A3B8;
+  color: #cbd5e1;
+  /* Improved contrast/brightness */
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -729,7 +741,8 @@
   display: flex;
   overflow-x: auto;
   gap: 1.5rem;
-  padding-bottom: 2rem;
+  padding: 0 1.5rem 2rem 1.5rem;
+  /* Add side padding for scroll start/end */
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
