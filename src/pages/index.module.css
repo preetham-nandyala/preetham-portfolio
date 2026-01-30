@@ -24,9 +24,10 @@
   /* Slightly darker/richer black */
   /* Cyber Grid Background */
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  /* Reduced size for sharper look */
   color: #f1f5f9;
   /* Brighter text (Slate 150) */
   line-height: 1.6;
@@ -95,11 +96,14 @@
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
+  opacity: 0.8;
+  /* Increased opacity for sharper effect */
 }
 
 .bgCode {
   position: absolute;
-  color: rgba(34, 211, 238, 0.02);
+  color: rgba(34, 211, 238, 0.08);
+  /* Increased from 0.02 */
   /* Extremely faint on mobile */
   font-family: 'Fira Code', 'Monaco', monospace;
   font-weight: 800;
@@ -112,46 +116,52 @@
 .bgCode:nth-child(1) {
   top: 10%;
   left: -10%;
-  font-size: 3rem;
+  font-size: 2rem;
   transform: rotate(-5deg);
 }
 
 .bgCode:nth-child(2) {
   top: 20%;
   right: -5%;
-  font-size: 4rem;
+  font-size: 2.5rem;
   transform: rotate(10deg);
-  color: rgba(192, 132, 252, 0.03);
+  color: rgba(192, 132, 252, 0.1);
+  /* Increased from 0.03 */
 }
 
 .bgCode:nth-child(3) {
   top: 40%;
   left: 5%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transform: rotate(5deg);
 }
 
 .bgCode:nth-child(4) {
   top: 60%;
   right: 5%;
-  font-size: 3rem;
+  font-size: 2rem;
   transform: rotate(-10deg);
-  color: rgba(129, 140, 248, 0.03);
+  color: rgba(129, 140, 248, 0.1);
+  /* Increased from 0.03 */
 }
+
+/* ... bgDecor styles remain same ... */
+
 
 .bgCode:nth-child(5) {
   top: 75%;
   left: -5%;
-  font-size: 4rem;
+  font-size: 2.5rem;
   transform: rotate(15deg);
 }
 
 .bgCode:nth-child(6) {
   bottom: 10%;
   right: -5%;
-  font-size: 4rem;
+  font-size: 2.5rem;
   transform: rotate(-5deg);
-  color: rgba(34, 211, 238, 0.04);
+  color: rgba(34, 211, 238, 0.12);
+  /* Increased from 0.04 */
 }
 
 .bgCode:nth-child(7) {
@@ -164,8 +174,9 @@
 .bgCode:nth-child(8) {
   bottom: 30%;
   left: 50%;
-  font-size: 6rem;
-  opacity: 0.02;
+  font-size: 4.5rem;
+  opacity: 0.1;
+  /* Increased from 0.02 */
   letter-spacing: 5px;
   transform: translateX(-50%);
 }
@@ -174,7 +185,8 @@
   top: 5%;
   right: 40%;
   font-size: 1.5rem;
-  color: rgba(46, 204, 113, 0.05);
+  color: rgba(46, 204, 113, 0.15);
+  /* Increased from 0.05 */
 }
 
 .hero {
@@ -370,15 +382,20 @@
   /* Stronger Glow */
 }
 
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
 /* ... existing styles ... */
 
 .heroBtnPrimary {
   display: inline-block;
-  padding: 0.8rem 0;
-  /* Horizontal padding removed, using width */
-  width: 100%;
-  flex: 1;
-  /* Grow to fill space */
+  padding: 0.8rem 2.5rem;
+  width: auto;
+  min-width: 160px;
+  /* Removed flex: 1 to prevent full stretch */
   background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
   /* Indigo -> Pink */
   color: white;
@@ -402,11 +419,10 @@
 
 .heroBtnSecondary {
   display: inline-block;
-  padding: 0.8rem 0;
-  /* Horizontal padding removed, using width */
-  width: 100%;
-  flex: 1;
-  /* Grow to fill space */
+  padding: 0.8rem 2.5rem;
+  width: auto;
+  min-width: 160px;
+  /* Removed flex: 1 */
   background: rgba(30, 41, 59, 0.6);
   color: #f1f5f9;
   font-weight: 600;
@@ -484,9 +500,16 @@
   background: #0B1120;
   border: 1px solid #1e293b;
   border-radius: 12px;
-  width: 100%;
-  max-width: 450px;
+  width: 92%;
+  /* Reduced width for mobile */
+  max-width: 380px;
+  /* Reduced size for mobile */
+  margin: 0 auto;
   overflow: hidden;
+  max-height: 320px;
+  /* Limit height to enable scrolling */
+  overflow-y: auto;
+  /* Enable vertical scroll */
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.05),
     0 20px 50px -10px rgba(0, 0, 0, 0.7),
@@ -539,8 +562,8 @@
   /* Maximize code width */
   /* Compact on mobile */
   font-family: 'Fira Code', 'Monaco', monospace;
-  font-size: 0.8rem;
-  /* Smaller font */
+  font-size: 0.75rem;
+  /* Smaller font for mobile */
   line-height: 1.6;
   color: #e2e8f0;
   white-space: pre;
@@ -627,7 +650,7 @@
   background: #0f172a;
   padding: 1.5rem;
   /* Mobile padding */
-  border-radius: 1.5rem;
+  border-radius: 12px;
   color: white;
   text-align: center;
   box-shadow: 0 0 30px rgba(79, 70, 229, 0.1);
@@ -673,15 +696,56 @@
   position: relative;
 }
 
+.projectsWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dotActive {
+  background: #38bdf8;
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
 .projectsGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.projectsGrid::-webkit-scrollbar {
+  display: none;
 }
 
 .projectCard {
+  min-width: 100%;
+  scroll-snap-align: center;
   background: rgba(30, 41, 59, 0.3);
-  border-radius: 1.25rem;
+  border-radius: 0;
+  /* Remove border radius for full width feel on mobile */
   padding: 1.5rem;
   /* Mobile padding */
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -824,126 +888,121 @@
 }
 
 
-/* -------------------------------------------------------------------------- */
-/*                               Skills Section                               */
-/* -------------------------------------------------------------------------- */
-.skillsSection {
-  padding: 4rem 1.5rem;
-  background: #050b14;
-}
 
-.skillsSubheading {
-  text-align: center;
-  max-width: 600px;
-  margin: -2rem auto 3rem auto;
-  color: #94A3B8;
-}
 
-.skillsGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-.skillColumn {
-  padding: 1.5rem;
-  /* Mobile padding */
-  background: rgba(30, 41, 59, 0.3);
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-  position: relative;
+/* System Map Specifics */
+.systemMapSection {
+  padding: 6rem 1.5rem;
+  background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
   overflow: hidden;
 }
 
-.skillColumn:hover {
-  transform: translateY(-5px);
-  border-color: rgba(129, 140, 248, 0.4);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
-  background: rgba(30, 41, 59, 0.5);
-}
-
-.skillHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.skillTitle {
-  font-size: 1.125rem;
-  margin: 0;
-  color: #F8FAFC;
-  font-weight: 700;
-}
-
-.skillList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skillListItem {
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  position: relative;
-  font-size: 0.95rem;
-  color: #CBD5E1;
-  transition: color 0.2s;
-}
-
-.skillListItem:hover {
-  color: #F8FAFC;
-}
-
-.skillListItem::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #22d3ee;
-  /* Cyan bullet */
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
-}
-
-.additionalSkills {
-  margin-top: 3rem;
+.flowDescription {
   text-align: center;
-  padding: 2rem;
-  background: rgba(30, 41, 59, 0.3);
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.additionalSkillsTitle {
-  margin: 0 0 1.5rem 0;
+  color: #94a3b8;
+  margin-bottom: 2rem;
   font-size: 1.1rem;
-  color: #F8FAFC;
 }
 
-.skillTags {
+.systemMapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  /* Taller for the full system */
+  margin: 3rem auto 0;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+}
+
+.systemSvg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.systemNode {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 16px;
+  width: 180px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.systemNode:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 20px 40px -10px rgba(56, 189, 248, 0.2);
+}
+
+.sysIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sysTitle {
+  font-weight: 700;
+  color: #f1f5f9;
+  font-size: 1.1rem;
+}
+
+.sysTech {
   display: flex;
   flex-wrap: wrap;
+  gap: 6px;
   justify-content: center;
-  gap: 0.75rem;
 }
 
-.skillTag {
-  background: rgba(15, 23, 42, 0.6);
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  color: #a5b4fc;
-  border: 1px solid rgba(165, 180, 252, 0.1);
-  font-weight: 500;
-  transition: all 0.2s;
+.sysTag {
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #94a3b8;
+  font-family: monospace;
 }
 
-.skillTag:hover {
-  background: rgba(165, 180, 252, 0.1);
-  color: #F8FAFC;
-  border-color: rgba(165, 180, 252, 0.3);
+@media (max-width: 1024px) {
+  .systemMapContainer {
+    height: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .systemSvg {
+    display: none;
+    /* Hide complex SVG connect lines on mobile */
+  }
+
+  .systemNode {
+    position: relative;
+    /* Stack them */
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    max-width: 300px;
+  }
 }
+
 
 /* -------------------------------------------------------------------------- */
 /*                                 CTA Section                                */
@@ -1040,19 +1099,22 @@
 }
 
 .footerMain {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
   margin-bottom: 3rem;
-  text-align: center;
+  text-align: left;
+  /* Left align on mobile for consistency with side-by-side links */
   color: #94A3B8;
 }
 
 .footerLinks {
   display: grid;
-  grid-template-columns: 1fr;
-  /* Centered column on mobile */
+  grid-template-columns: 1fr 1fr;
+  /* Side-by-side on mobile too */
   gap: 2rem;
+  text-align: left;
+  /* Align text left for better readability */
 }
 
 .footerLink {
@@ -1062,7 +1124,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
-  display: inline-block;
+  display: block;
   /* Allow transform */
 }
 
@@ -1152,7 +1214,20 @@
   }
 
   .projectsGrid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .projectCard {
+    min-width: 0;
+    /* Reset for grid */
+  }
+
+  .paginationDots {
+    display: none;
+    /* Hide dots on desktop */
   }
 
   .heroVisual {
@@ -1185,9 +1260,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .skillsGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+
 
   .sectionTitle {
     font-size: 2.5rem;
@@ -1237,9 +1310,10 @@
   }
 
   /* Restore card padding on desktop */
-  .projectCard,
-  .skillColumn {
+  .projectCard {
     padding: 2rem;
+    border-radius: 1.25rem;
+    /* Restore border radius on desktop */
   }
 
   .buildSideCard {
@@ -1251,9 +1325,12 @@
     padding: 1.5rem;
   }
 
-  /* Restore 3D effect on desktop */
   .codeWindow {
     transform: perspective(1000px) rotateY(-5deg);
+    max-width: 450px;
+    width: 100%;
+    max-height: 400px;
+    /* Taller on desktop */
   }
 
   .codeWindow:hover {
@@ -1262,18 +1339,17 @@
 
   /* Footer Desktop */
   .footerMain {
-    grid-template-columns: 1.5fr 1fr 1fr;
-    /* Brand | Links | Contact */
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    /* Wide Brand Area | Combined Links Area */
     gap: 4rem;
-    /* Big gap to prevent touching */
-    text-align: left;
     align-items: start;
   }
 
+  /* No need to override footerLinks if it is already 1fr 1fr from mobile-first rules */
+  /* But ensure gap is correct for desktop */
   .footerLinks {
-    grid-template-columns: 1fr;
-    /* Stack links vertically in their column */
-    gap: 0.5rem;
+    gap: 4rem;
   }
 
   .footerSection p {
