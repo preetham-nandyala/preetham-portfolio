@@ -12,7 +12,17 @@ export default function Landing() {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
+  // Typewriter Words
   const words = ["Web Experiences", "Scalable Systems", "Robust APIs", "Next.js Apps"];
+
+  const getTechBadgeClass = (tech) => {
+    const lower = tech.toLowerCase();
+    if (lower.includes('react') || lower.includes('next') || lower.includes('css')) return styles.badgeBlue;
+    if (lower.includes('node') || lower.includes('mongo') || lower.includes('express')) return styles.badgeGreen;
+    if (lower.includes('socket') || lower.includes('docker')) return styles.badgePurple;
+    if (lower.includes('js') || lower.includes('html')) return styles.badgeYellow;
+    return '';
+  };
 
   useEffect(() => {
     const handleTyping = () => {
@@ -58,15 +68,15 @@ export default function Landing() {
     };
 
     const initParticles = () => {
-      const particleCount = Math.min(Math.floor(window.innerWidth / 25), 60); // Reduced density
+      const particleCount = Math.min(Math.floor(window.innerWidth / 20), 80); // Increased density
       particles = [];
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.3, // Slow movement
-          vy: (Math.random() - 0.5) * 0.3,
-          size: Math.random() * 1.2 + 0.5, // Reduced size
+          vx: (Math.random() - 0.5) * 0.8, // Faster movement
+          vy: (Math.random() - 0.5) * 0.8,
+          size: Math.random() * 1.5 + 0.5, // Slightly larger variation
         });
       }
     };
@@ -203,14 +213,7 @@ export default function Landing() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const getTechBadgeClass = (tech) => {
-    const lower = tech.toLowerCase();
-    if (lower.includes('react') || lower.includes('next') || lower.includes('css')) return styles.badgeBlue;
-    if (lower.includes('node') || lower.includes('mongo') || lower.includes('express')) return styles.badgeGreen;
-    if (lower.includes('socket') || lower.includes('docker')) return styles.badgePurple;
-    if (lower.includes('js') || lower.includes('html')) return styles.badgeYellow;
-    return '';
-  };
+
 
   return (
     <div className={styles.hero}>
@@ -317,7 +320,7 @@ export default function Landing() {
                   <span className={styles.p}>  </span><span className={styles.k}>stack</span>{": "}<span className={styles.p}>{"{"}</span>
                 </div>
                 <div className={styles.line}>
-                  <span className={styles.p}>    </span><span className={styles.k}>frontend</span>{": "}<span className={styles.p}>{"["}</span><span className={styles.s}>"React"</span>{", "}<span className={styles.s}>"Next.js"</span>{", "}<span className={styles.s}>"Tailwind"</span><span className={styles.p}>{"],"}</span>
+                  <span className={styles.p}>    </span><span className={styles.k}>frontend</span>{": "}<span className={styles.p}>{"["}</span><span className={styles.s}>"React"</span>{", "}<span className={styles.s}>"Next.js"</span>{", "}<span className={styles.s}>"JavaScript"</span><span className={styles.p}>{"],"}</span>
                 </div>
                 <div className={styles.line}>
                   <span className={styles.p}>    </span><span className={styles.k}>backend</span>{": "}<span className={styles.p}>{"["}</span><span className={styles.s}>"Node"</span>{", "}<span className={styles.s}>"Express"</span>{", "}<span className={styles.s}>"Socket.IO"</span><span className={styles.p}>{"],"}</span>
