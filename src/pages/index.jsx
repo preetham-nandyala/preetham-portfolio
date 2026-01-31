@@ -391,14 +391,18 @@ export default function Landing() {
                   <h3 className={styles.projectTitle}>ProConnect</h3>
                   <span className={styles.statusBadge}>Live</span>
                 </div>
-                <p className={styles.projectDesc}>
-                  Real-time professional networking platform with authenticated users, socket-based communication, and media sharing.
-                </p>
+                <div className={styles.projectDesc}>
+                  <p>Full-stack networking platform with authentication, user profiles, posts, and connection management.</p>
+<p >Implemented real-time one-to-one messaging using Socket.IO for instant communication.</p>
+<p >Built scalable REST APIs and optimized MongoDB queries for performance and data consistency.</p>
+</div>
                 <div className={styles.techStack}>
                   <span className={`${styles.techBadge} ${getTechBadgeClass('Next.js')}`}>Next.js</span>
                   <span className={`${styles.techBadge} ${getTechBadgeClass('Node.js')}`}>Node.js</span>
                   <span className={`${styles.techBadge} ${getTechBadgeClass('Socket.IO')}`}>Socket.IO</span>
                   <span className={`${styles.techBadge} ${getTechBadgeClass('MongoDB')}`}>MongoDB</span>
+                  <span className={`${styles.techBadge} ${getTechBadgeClass('Next.js')}`}>Redux</span>
+
                 </div>
                 <div className={styles.projectFeatures}>
                   <p className={styles.projectFeature}>✓ JWT Authentication</p>
@@ -406,7 +410,7 @@ export default function Landing() {
                 </div>
                 <div className={styles.projectActions}>
                   <a href="https://github.com/preetham-nandyala" target="_blank" className={styles.actionBtn}>GitHub</a>
-                  <a href="#" className={styles.actionBtnOutline}>Live Demo</a>
+                  <a href="https://pro-connect-kappa.vercel.app/dashboard" className={styles.actionBtnOutline}>Live Demo</a>
                 </div>
               </div>
 
@@ -416,9 +420,11 @@ export default function Landing() {
                   <h3 className={styles.projectTitle}>RTL Vault</h3>
                   <span className={styles.statusBadge}>v2.0</span>
                 </div>
-                <p className={styles.projectDesc}>
-                  Role-based learning platform with separate admin and user experiences, integrated code editor, and modular architecture.
-                </p>
+                <div className={styles.projectDesc}>
+                  <p>Web-based platform for writing and executing Verilog (RTL) code in an online environment.</p>
+                  <p>Implemented role-based access control (RBAC) to manage user permissions and secure access.</p>
+                  <p>Built backend services to handle code submission, execution, and result processing reliably.</p>
+                </div>
                 <div className={styles.techStack}>
                   <span className={`${styles.techBadge} ${getTechBadgeClass('Next.js')}`}>Next.js</span>
                   <span className={`${styles.techBadge} ${getTechBadgeClass('Express.js')}`}>Express.js</span>
@@ -430,13 +436,39 @@ export default function Landing() {
                   <p className={styles.projectFeature}>✓ Secure Code Execution</p>
                 </div>
                 <div className={styles.projectActions}>
-                  <a href="https://github.com/preetham-nandyala" target="_blank" className={styles.actionBtn}>GitHub</a>
+                  <a href="https://github.com/preetham-nandyala/RTL-Vault" target="_blank" className={styles.actionBtn}>GitHub</a>
+                  <a href="#" className={styles.actionBtnOutline}>Live Demo</a>
+                </div>
+              </div>
+
+              <div className={styles.projectCard}>
+                <div className={styles.projectHeader}>
+                  <h3 className={styles.projectTitle}>SkillForge</h3>
+                  <span className={styles.statusBadge}>v1.0</span>
+                </div>
+                <div className={styles.projectDesc}>
+                  <p>SkillForge is a web-based platform for learning aptitude and programming concepts.</p>
+                  <p>It offers structured study material with timed, difficulty-based, section-wise assessments.</p>
+                  <p>The platform tracks user progress, test attempts, and performance with admin-managed controls.</p>
+                </div>
+                <div className={styles.techStack}>
+                  <span className={`${styles.techBadge} ${getTechBadgeClass('Next.js')}`}>Next.js</span>
+                  <span className={`${styles.techBadge} ${getTechBadgeClass('Express.js')}`}>Express.js</span>
+                  <span className={`${styles.techBadge} ${styles.badgeBlue}`}>Monaco</span>
+                  <span className={`${styles.techBadge} ${getTechBadgeClass('Docker')}`}>React.js</span>
+                </div>
+                <div className={styles.projectFeatures}>
+                  <p className={styles.projectFeature}>✓ Learning & Assessments</p>
+                  <p className={styles.projectFeature}>✓ Timed Tests</p>
+                </div>
+                <div className={styles.projectActions}>
+                  <a href="https://github.com/preetham-nandyala/Skill-Forge" target="_blank" className={styles.actionBtn}>GitHub</a>
                   <a href="#" className={styles.actionBtnOutline}>Live Demo</a>
                 </div>
               </div>
 
               {/* Simon Says */}
-              <div className={styles.projectCard}>
+              {/* <div className={styles.projectCard}>
                 <div className={styles.projectHeader}>
                   <h3 className={styles.projectTitle}>Simon Says</h3>
                   <span className={styles.statusBadge}>Game</span>
@@ -455,7 +487,7 @@ export default function Landing() {
                   <a href="https://github.com/preetham-nandyala" target="_blank" className={styles.actionBtn}>GitHub</a>
                   <a href="#" className={styles.actionBtnOutline}>Play Now</a>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className={styles.paginationDots}>
               {[0, 1, 2].map((idx) => (

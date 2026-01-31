@@ -826,6 +826,9 @@
 }
 
 .projectDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   color: #94A3B8;
   font-size: 1rem;
   margin-bottom: 1.5rem;
